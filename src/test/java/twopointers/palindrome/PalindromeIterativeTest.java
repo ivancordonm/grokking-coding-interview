@@ -1,8 +1,7 @@
-package palindrome;
+package twopointers.palindrome;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import twopointers.palindrome.PalindromeIterative;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
