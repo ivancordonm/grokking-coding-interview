@@ -4,7 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 import kotlin.test.assertEquals
 
-class PalindromeTest {
+class PalindromeKTest {
 
     @ParameterizedTest(name = "#{index} - Test with String : {0}")
     @CsvSource("kayak,TRUE", "hello,FALSE", "RACEACAR,FALSE", "A,TRUE", "ABCDABCD,FALSE", "DCBAABCD,TRUE", "ABCBA,TRUE")
