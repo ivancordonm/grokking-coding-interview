@@ -3,14 +3,14 @@ package twopointers.palindrome;
 public class PalindromeIterative {
 
     public boolean isPalindrome(String s) {
-        var pInit = 0;
-        var pLast = s.length() - 1;
-        while (pInit < pLast) {
-            if (s.charAt(pInit) != s.charAt(pLast)) {
+        var low = 0;
+        var high = s.length() - 1;
+        while (low < high) {
+            if (s.charAt(low) != s.charAt(high)) {
                 return false;
             }
-            pInit++;
-            pLast--;
+            low++;
+            high--;
         }
         return true;
     }

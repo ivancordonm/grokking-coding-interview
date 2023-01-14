@@ -1,12 +1,12 @@
 package twopointers.palindrome
 
 fun isPalindromeIterative(s: String): Boolean {
-    var pInit = 0
-    var pLast = s.lastIndex
-    while (pInit < pLast) {
-        if (s[pInit] != s[pLast]) return false
-        pInit++
-        pLast--
+    var low = 0
+    var high = s.lastIndex
+    while (low < high) {
+        if (s[low] != s[high]) return false
+        low++
+        high--
     }
     return true
 }
