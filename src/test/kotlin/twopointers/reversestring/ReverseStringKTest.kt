@@ -4,7 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 import kotlin.test.assertEquals
 
-class ReverseStringKtTest {
+class ReverseStringKTest {
 
     @ParameterizedTest(name = "#{index} Test with String: {0}")
     @CsvSource(
