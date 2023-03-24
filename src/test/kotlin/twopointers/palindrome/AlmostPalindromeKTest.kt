@@ -8,14 +8,14 @@ class AlmostPalindromeKTest {
 
     @ParameterizedTest(name = "#{index} - Test with String : {0}")
     @CsvSource(
-        "dead,TRUE",
-        "abca,TRUE",
-        "tebbem,FALSE",
-        "eeccccbebaeeabebccceea,FALSE",
-        "ognfjhgbjhzkqhzadmgqbwqsktzqwjexqvzjsopolnmvnymbbzoofzbbmynvmnloposjzvqxejwqztksqwbqgmdazhqkzhjbghjfno,FALSE",
-        "abbdba,TRUE",
-        "ajkkjab,TRUE",
-        "ajkkjb,FALSE"
+        "dead,true",
+        "abca,true",
+        "tebbem,false",
+        "eeccccbebaeeabebccceea,false",
+        "ognfjhgbjhzkqhzadmgqbwqsktzqwjexqvzjsopolnmvnymbbzoofzbbmynvmnloposjzvqxejwqztksqwbqgmdazhqkzhjbghjfno,false",
+        "abbdba,true",
+        "ajkkjab,true",
+        "ajkkjb,false"
     )
     fun isAlmostPalindrome(s: String, result: Boolean) {
         assertEquals(result, isAlmostPalindrome(s))

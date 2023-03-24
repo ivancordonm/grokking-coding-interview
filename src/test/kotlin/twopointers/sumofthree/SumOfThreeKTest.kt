@@ -9,8 +9,8 @@ class SumOfThreeKTest {
 
     @ParameterizedTest(name = "#{index} - Test with String : {0}")
     @CsvSource(
-        value = ["1,-1,0;1;FALSE", "3,7,1,2,8,4,5;10;TRUE", "3,7,1,2,8,4,5;20;TRUE", "3,7,1,2,8,4,5;21;FALSE",
-            "-1,2,1,-4,5,-3;-8;TRUE", "-1,2,1,-4,5,-3;0;TRUE", "-1,2,1,-4,5,-3;7;FALSE", "3,7,1,2,8,4,5;20;TRUE"],
+        value = ["1,-1,0;1;false", "3,7,1,2,8,4,5;10;true", "3,7,1,2,8,4,5;20;true", "3,7,1,2,8,4,5;21;false",
+            "-1,2,1,-4,5,-3;-8;true", "-1,2,1,-4,5,-3;0;true", "-1,2,1,-4,5,-3;7;false", "3,7,1,2,8,4,5;20;true"],
         delimiterString = ";"
     )
     fun isSumOfThree(input: String, target: Int, result: Boolean) {

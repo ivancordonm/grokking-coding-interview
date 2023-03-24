@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 class PalindromeKTest {
 
     @ParameterizedTest(name = "#{index} - Test with String : {0}")
-    @CsvSource("kayak,TRUE", "hello,FALSE", "RACEACAR,FALSE", "A,TRUE", "ABCDABCD,FALSE", "DCBAABCD,TRUE", "ABCBA,TRUE")
+    @CsvSource("kayak,true", "hello,false", "RACEACAR,false", "A,true", "ABCDABCD,false", "DCBAABCD,true", "ABCBA,true")
     fun given_a_string_when_chek_if_it_is_a_palindrome_then_should_return_correct_answer(s: String, result: Boolean) {
         assertEquals(result, isPalindromeIterative(s))
         assertEquals(result, isPalindromeRecursive(s))
