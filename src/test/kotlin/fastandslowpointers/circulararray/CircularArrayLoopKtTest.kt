@@ -10,8 +10,8 @@ class CircularArrayLoopKtTest {
 
     @ParameterizedTest(name = "#{index} test with array {0}")
     @CsvSource(
-        value = ["1,3,-2,-4,1;TRUE", "2,1,-1,-2;FALSE", "1,3,-2,-4,1;TRUE", "1,3,-2,-4,1;FALSE",
-            "1,2,-3,3,4,7,1;TRUE", "3,3,1,-1,2;TRUE"],
+        value = ["1,2,3,4,5;true", "1,3,-2,-4,1;true", "2,1,-1,-2;false", "3,2,1,1,-4,1;false",
+            "1,2,-3,3,4,7,1;true", "-1,-1,-1,-1,-1,-1;true"],
         delimiterString = ";"
     )
     fun circularArrayLoop(input: String, result: Boolean) {
