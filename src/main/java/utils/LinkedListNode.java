@@ -11,4 +11,9 @@ public class LinkedListNode<T> {
         this.next = null;
     }
 
+    @Override
+    public String toString() {
+        return (next != null) ? data + " -> " + next : data.toString();
+    }
+
 }
