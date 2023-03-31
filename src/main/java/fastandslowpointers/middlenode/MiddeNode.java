@@ -1,4 +1,4 @@
-package middlenode;
+package fastandslowpointers.middlenode;
 
 import utils.LinkedListNode;
 
