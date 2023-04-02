@@ -1,9 +1,9 @@
-package slidingwindow
+package slidingwindow.repeateddnasequence
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
-import utils.listStringConverter
+import utils.setStringConverter
 
 class RepeatedDNASequencesKtTest {
 
@@ -15,7 +15,7 @@ class RepeatedDNASequencesKtTest {
         delimiterString = ";"
     )
     fun getRepeatedSeq(input: String, k: Int, result: String) {
-        assertEquals(result.listStringConverter(), getRepeatedSeq(input, k))
-        assertEquals(result.listStringConverter(), getRepeatedSeq2(input, k))
+        assertEquals(result.setStringConverter(), getRepeatedSeq(input, k).toSet())
+        assertEquals(result.setStringConverter(), getRepeatedSeq2(input, k).toSet())
     }
 }

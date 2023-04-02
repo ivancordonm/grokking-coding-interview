@@ -1,4 +1,4 @@
-package slidingwindow
+package slidingwindow.repeateddnasequence
 
 fun getRepeatedSeq(dna: String, k: Int) : List<String> {
     val counter = mutableMapOf<String, Int>() // LinkedHashmap. It's not necessary obtain hash from the key
