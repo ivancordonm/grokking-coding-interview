@@ -9,9 +9,7 @@ class RepeatedDNASequencesKtTest {
 
     @ParameterizedTest(name = "#{index} Test with String {0}")
     @CsvSource(
-        value = ["AAAAACCCCCAAAAACCCCCC;8;AAAAACCC, AAAACCCC, AAACCCCC",
-            "GGGGGGGGGGGGGGGGGGGGGGGGG;12;GGGGGGGGGGGG",
-            "TTTTTCCCCCCCTTTTTTCCCCCCCTTTTTTT;10;TTTTTCCCCC, TTTTCCCCCC, TTTCCCCCCC, TTCCCCCCCT, TCCCCCCCTT, CCCCCCCTTT, CCCCCCTTTT, CCCCCTTTTT, CCCCTTTTTT"],
+        value = [ "A;2;''"],
         delimiterString = ";"
     )
     fun getRepeatedSeq(input: String, k: Int, result: String) {

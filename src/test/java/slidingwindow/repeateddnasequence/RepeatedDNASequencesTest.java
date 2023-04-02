@@ -15,7 +15,9 @@ class RepeatedDNASequencesTest {
     @CsvSource(
             value = {"AAAAACCCCCAAAAACCCCCC;8;AAAAACCC, AAAACCCC, AAACCCCC",
                     "GGGGGGGGGGGGGGGGGGGGGGGGG;12;GGGGGGGGGGGG",
-                    "TTTTTCCCCCCCTTTTTTCCCCCCCTTTTTTT;10;TTTTTCCCCC, TTTTCCCCCC, TTTCCCCCCC, TTCCCCCCCT, TCCCCCCCTT, CCCCCCCTTT, CCCCCCTTTT, CCCCCTTTTT, CCCCTTTTTT"},
+                    "TTTTTCCCCCCCTTTTTTCCCCCCCTTTTTTT;10;TTTTTCCCCC, TTTTCCCCCC, TTTCCCCCCC, TTCCCCCCCT, TCCCCCCCTT, CCCCCCCTTT, CCCCCCTTTT, CCCCCTTTTT, CCCCTTTTTT",
+                    "A;4;"
+            },
             delimiterString = ";"
     )
     void getSequences(String input, int k, @ConvertWith(StringSetConverter.class) Set<String> result) {
