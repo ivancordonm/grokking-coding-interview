@@ -22,6 +22,6 @@ class RepeatedDNASequencesTest {
     )
     void getSequences(String input, int k, @ConvertWith(StringSetConverter.class) Set<String> result) {
         RepeatedDNASequences repeatedDNASequences = new RepeatedDNASequences();
-        assertEquals(result, Set.copyOf(repeatedDNASequences.getSequences(input, k)));
+        assertEquals(result, repeatedDNASequences.getSequences(input, k));
     }
 }
