@@ -15,8 +15,9 @@ public class IntArrayConverter implements ArgumentConverter {
                     "The argument should be a string: " + source);
         }
         return Arrays.stream(s.split(","))
-                     .mapToInt(Integer::parseInt)
-                     .toArray();
+                .map(String::trim)
+                .mapToInt(Integer::parseInt)
+                .toArray();
     }
 
 }
