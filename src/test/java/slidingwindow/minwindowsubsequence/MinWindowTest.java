@@ -8,7 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class MinWindowTest {
 
     @CsvSource(value = {"ababc,abc,abc",
-            "abcdebdde,bde,bcde"})
+            "abcdebdde,bde,bcde",
+            "michmznaitnjdnjkdsnmichmznait,michmznait,michmznait",
+            "afgegrwgwga,aa,afgegrwgwga",
+            "abababa,ba,ba",})
     @ParameterizedTest(name = "Test {index}: input={0}, expected={1}")
     void getMinimumString(String str1, String str2, String expected) {
         var minWindow = new MinWindow();
