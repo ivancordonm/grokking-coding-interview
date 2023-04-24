@@ -10,13 +10,13 @@ public class LongestSubstring {
         var start = 0;
         for(int i = 0; i < str.length(); i++) {
             var c = str.charAt(i);
-            if(window.containsKey(c) && window.get(c) >= start) {
-                if (i - start + 1 > maxLength) maxLength = i - start;
+            if(window.getOrDefault(c, -1) >= start) {
+                maxLength = Math.max(maxLength, i - start);
                 start = window.get(c) + 1;
             }
             window.put(c,i);
         }
-        if(str.length() - start > maxLength) maxLength = str.length() - start;
+        maxLength = Math.max(maxLength, str.length() - start);
         return maxLength;
     }
 }
