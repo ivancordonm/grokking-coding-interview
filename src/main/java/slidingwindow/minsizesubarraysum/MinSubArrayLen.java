@@ -8,6 +8,7 @@ public class MinSubArrayLen {
         var l = 0;
         for (int r = 0; r < arr.length; r++) {
             sum += arr[r];
+            // It's not necessary check l because in the end the sum would be 0 when subtract last element
             while (sum >= target) {
                 if (r - l + 1 < minLen) minLen = r - l + 1;
                 sum -= arr[l++];
