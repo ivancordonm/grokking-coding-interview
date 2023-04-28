@@ -15,6 +15,6 @@ class MaxProfitTest {
     }, delimiterString = ";")
     @ParameterizedTest(name = "should return {1} for {0}")
     void getMaxProfit(@ConvertWith(IntArrayConverter.class) int[] prices, int expected) {
-        assertEquals(expected, (new MaxProfit()).getMaxProfit(prices));
+        assertEquals(expected, new MaxProfit().getMaxProfit(prices));
     }
 }
