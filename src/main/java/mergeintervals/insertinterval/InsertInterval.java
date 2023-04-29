@@ -7,11 +7,10 @@ import java.util.List;
 
 public class InsertInterval {
     public List<Interval> insertInterval(List<Interval> existingIntervals, Interval newInterval) {
-        // [1:2] [3:4] [5:6] [7:8] <- [6:10]   -> [1:2] [3:4] [5:10]
         // First part insert every interval lower than new interval
         var output = new ArrayList<Interval>();
         var i = 0;
-        while (existingIntervals.get(i).getStart() < newInterval.getStart()) {
+        while (i < existingIntervals.size() && existingIntervals.get(i).getStart() < newInterval.getStart()) {
             output.add(new Interval(existingIntervals.get(i).getStart(), existingIntervals.get(i).getEnd()));
             i++;
         }
