@@ -19,7 +19,7 @@ public class InsertInterval {
         if (lastOutputElement != null && newInterval.getStart() <= lastOutputElement.getEnd())
             lastOutputElement.setEnd(Math.max(newInterval.getEnd(), lastOutputElement.getEnd()));
         else output.add(new Interval(newInterval.getStart(), newInterval.getEnd()));
-        // Last part merge or inserted the rest
+        // Last part merge or insert the rest
         for (var currentInterval : existingIntervals.subList(i, existingIntervals.size())) {
             lastOutputElement = output.get(output.size() - 1);
             if (currentInterval.getStart() <= lastOutputElement.getEnd())
