@@ -5,7 +5,6 @@ import mergeintervals.mergeintervals.Interval;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class EmployeeFreeTimes {
 
@@ -19,14 +18,14 @@ public class EmployeeFreeTimes {
         List<Interval> ans = new ArrayList<>();
 
         var allIntervals = schedule.stream()
-                .flatMap(List::stream)
-                .sorted(Comparator.comparingInt(Interval::getStart))
-                .toList();
+                                   .flatMap(List::stream)
+                                   .sorted(Comparator.comparingInt(Interval::getStart))
+                                   .toList();
 
         var lastEnd = allIntervals.get(0).getEnd();
-        for(var interval: allIntervals.subList(1, allIntervals.size())) {
-            if(interval.getStart() > lastEnd) ans.add(new Interval(lastEnd, interval.getStart()));
-            if(interval.getEnd() > lastEnd) lastEnd = interval.getEnd();
+        for (var interval : allIntervals.subList(1, allIntervals.size())) {
+            if (interval.getStart() > lastEnd) ans.add(new Interval(lastEnd, interval.getStart()));
+            if (interval.getEnd() > lastEnd) lastEnd = interval.getEnd();
         }
 
         return ans;
