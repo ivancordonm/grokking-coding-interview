@@ -11,3 +11,6 @@ Examples
 ![img.png](example1.png)
 
 ![img.png](example2.png)
+
+
+Time complexity is O(n log n) where n is the total number of intervals. This is because we are iterating through the intervals only once and sorting them will take O(n log n) time.
