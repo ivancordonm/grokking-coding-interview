@@ -6,6 +6,11 @@ public class ReverseLinkedList {
     public LinkedListNode<Integer> reverse(LinkedListNode<Integer> head, int k) {
         // 2,3,4,5,6 (2) -> 3,2,5,4,6
         LinkedListNode<Integer> currentGroupEnd = head, prev = null, next = null;
+
+        //edge cases
+        if(k <= 1 || head == null)
+            return head;
+
         while (currentGroupEnd != null) {
             //check if there is a group
             for (int i = 1; i < k; i++) {
