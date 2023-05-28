@@ -7,7 +7,7 @@ public class ReverseLinkedList2 {
 
         if(right == left) return head; // no need to reverse
 
-        LinkedListNode<Integer> current = head, rightNode, leftNode = head, prev = null, next;
+        LinkedListNode<Integer> current = head, rightNode = head, leftNode = head, prev = null, next;
         var count = 1;
 
         // if left is greater than 1, we need to find leftNode, prev and current
@@ -21,7 +21,7 @@ public class ReverseLinkedList2 {
             rightNode = current.next;
             current = current.next;
             count++;
-        } else rightNode = current;
+        }
 
         //reverse from left to right
         while (count <= right) {
