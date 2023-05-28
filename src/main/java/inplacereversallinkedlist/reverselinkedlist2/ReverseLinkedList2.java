@@ -5,39 +5,37 @@ import utils.LinkedListNode;
 public class ReverseLinkedList2 {
     public LinkedListNode<Integer> reverseBetween(LinkedListNode<Integer> head, int left, int right) {
 
-        if(right == left) return head; // no need to reverse
+        if (right == left) {
+            return head;
+        }
 
-        LinkedListNode<Integer> current = head, rightNode = head, leftNode = head, prev = null, next;
-        var count = 1;
+        LinkedListNode<Integer> current = head, prev = null;
+        int count = 1;
 
-        // if left is greater than 1, we need to find leftNode, prev and current
-        if(left > 1) {
-            while (count < left - 1) {
-                current = current.next;
-                count++;
-            }
-            leftNode = current;
+        // Find leftNode, prev and current
+        while (count < left) {
             prev = current;
-            rightNode = current.next;
             current = current.next;
             count++;
         }
 
-        //reverse from left to right
+        // Reverse from left to right
+        LinkedListNode<Integer> leftNode = prev, rightNode = current;
         while (count <= right) {
-            next = current.next;
+            var next = current.next;
             current.next = prev;
             prev = current;
             current = next;
             count++;
         }
 
-        //connect left
-        if(left == 1) head = prev;
-        else leftNode.next = prev;
-
-        //connect right
-        if(current != null) rightNode.next = current;
+        // Connect left and right
+        if (leftNode == null) {
+            head = prev;
+        } else {
+            leftNode.next = prev;
+        }
+        rightNode.next = current;
 
         return head;
     }
