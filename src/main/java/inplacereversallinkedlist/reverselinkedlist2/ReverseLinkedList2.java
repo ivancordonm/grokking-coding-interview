@@ -5,6 +5,8 @@ import utils.LinkedListNode;
 public class ReverseLinkedList2 {
     public LinkedListNode<Integer> reverseBetween(LinkedListNode<Integer> head, int left, int right) {
 
+        if(right == left) return head; // no need to reverse
+
         LinkedListNode<Integer> current = head, rightNode, leftNode = head, prev = null, next;
         var count = 1;
 
