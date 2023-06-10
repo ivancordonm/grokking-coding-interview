@@ -4,6 +4,7 @@ import utils.LinkedListNode;
 
 public class Reorder {
     public LinkedListNode<Integer> reorderList(LinkedListNode<Integer> head) {
+        if (head == null) return null;
         // find middle
         var middle = middle(head);
         var first2 = middle.next;
