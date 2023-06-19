@@ -6,27 +6,23 @@ public class SwapNodes {
     public LinkedListNode<Integer> swapNodes(LinkedListNode<Integer> head, int k) {
 
         var count = 1;
-        var current = head;
-        while (count < k && current != null) {
-            current = current.next;
+        LinkedListNode<Integer> curr = head, front = null, end = null;
+
+        while (curr != null) {
+            if (end != null) end = end.next;
+            if (count == k) {
+                front = curr;
+                end = head;
+            }
             count++;
-        }
-        // k is greater than length of list
-        if (current == null) return head;
-
-        var front = current;
-        var end = head;
-
-        while (current.next != null) {
-            current = current.next;
-            end = end.next;
+            curr = curr.next;
         }
 
+        if (front == null || end == null) return head;
         var temp = front.data;
         front.data = end.data;
         end.data = temp;
 
         return head;
-
     }
 }
