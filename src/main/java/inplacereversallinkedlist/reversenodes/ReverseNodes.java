@@ -5,17 +5,17 @@ import utils.LinkedListNode;
 public class ReverseNodes {
     public LinkedListNode<Integer> reverseEvenLengthGroups(LinkedListNode<Integer> head) {
 
+        if (head == null) return null;
+
         LinkedListNode<Integer> prev = head;
-        LinkedListNode<Integer> next = null;
         LinkedListNode<Integer> current = head.next;
         LinkedListNode<Integer> first = head.next;
+        LinkedListNode<Integer> next;
 
         var group = 2;
         var count = 1;
 
         while (current != null) {
-            count++;
-            current = current.next;
             if (count == group) {
                 if (count % 2 == 0) {
                     next = current.next;
@@ -24,13 +24,21 @@ public class ReverseNodes {
                     first.next = next;
                     current = next;
                     first = next;
+                } else {
+                    prev = current;
+                    first = current.next;
+                    current = current.next;
                 }
                 count = 1;
                 group++;
+                continue;
             }
+            if (current.next == null && count % 2 == 0 && count < group) {
+                prev.next = reverseList(first, count);
+            }
+            count++;
+            current = current.next;
         }
-
-        // last step if the count of the rest less than group but they are even.
 
         return head;
     }
