@@ -23,7 +23,7 @@ public class SlidingWindow {
         ArrayList<Integer> removed = new ArrayList<>();
 
         result[left] = getMedian(maxHeap, minHeap, balance);
-
+        System.out.println("Result: " + result[left]);
         for (var i = k; i < nums.length; i++) {
             System.out.println("------------------------------------");
             System.out.println("Before adding:");
@@ -102,6 +102,8 @@ public class SlidingWindow {
     }
 
     private double getMedian(PriorityQueue<Integer> maxHeap, PriorityQueue<Integer> minHeap, int balance) {
-        return balance == 0 ? (maxHeap.peek() + minHeap.peek()) / 2.0 : maxHeap.peek();
+        assert !maxHeap.isEmpty(); // maxHeap is never empty
+        assert !minHeap.isEmpty(); // minHeap is never empty
+        return balance == 0 ? ((double) maxHeap.peek() + minHeap.peek()) / 2.0 : maxHeap.peek();
     }
 }

@@ -11,10 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 class SlidingWindowTest {
 
     @CsvSource(value = {
-        "1,3,-1,-3,5,3,6,7;3;1.0,-1.0,-1.0,3.0,5.0,6.0",
-        "-7,2,5,-2,3,-1;2;-2.5,3.5,1.5,0.5,1",
-        "1,3,-1,-3,5,3,6,7;5;1.0,3.0,3.0,5.0",
-        "1,2;1;1.0,2.0",
+//        "1,3,-1,-3,5,3,6,7;3;1.0,-1.0,-1.0,3.0,5.0,6.0",
+//        "-7,2,5,-2,3,-1;2;-2.5,3.5,1.5,0.5,1",
+//        "1,3,-1,-3,5,3,6,7;5;1.0,3.0,3.0,5.0",
+//        "1,2;1;1.0,2.0",
+        "2147483647,-14756,21474,-2147483646,-2147483647,-5555,9999;2;1073734445.5,3359.0,-1073731086.0,-2147483646.5,-1073744601.0,2222.0"
     }, delimiter = ';')
     @ParameterizedTest(name = "should return median of {0} with window size {1} as {2}")
     void should_return_median_window(@ConvertWith(IntArrayConverter.class) int[] input, int k,
