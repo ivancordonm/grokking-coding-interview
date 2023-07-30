@@ -6,12 +6,14 @@ import org.junit.jupiter.params.converter.ArgumentConverter;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class ListOfListOfIntConverter implements ArgumentConverter {
 
     @Override
     public Object convert(Object source, ParameterContext context) throws ArgumentConversionException {
+        if (source == null) return List.of();
         if (!(source instanceof String s)) {
             throw new IllegalArgumentException(
                 "The argument should be a string: " + source);
