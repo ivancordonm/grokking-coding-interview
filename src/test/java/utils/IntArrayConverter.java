@@ -10,14 +10,15 @@ public class IntArrayConverter implements ArgumentConverter {
 
     @Override
     public Object convert(Object source, ParameterContext context) throws ArgumentConversionException {
+        if (source == null) return new int[0];
         if (!(source instanceof String s)) {
             throw new IllegalArgumentException(
-                    "The argument should be a string: " + source);
+                "The argument should be a string: " + source);
         }
         return Arrays.stream(s.split(","))
-                .map(String::trim)
-                .mapToInt(Integer::parseInt)
-                .toArray();
+                     .map(String::trim)
+                     .mapToInt(Integer::parseInt)
+                     .toArray();
     }
 
 }
