@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
 
-public class LinkedListNode<T> implements Iterable<T>{
+public class LinkedListNode<T> implements Iterable<T> {
 
     public T data;
     public LinkedListNode<T> next;
@@ -17,7 +17,6 @@ public class LinkedListNode<T> implements Iterable<T>{
 
     @Override
     public String toString() {
-//        return data.toString();
         return (next != null) ? data + " -> " + next : data.toString();
     }
 
