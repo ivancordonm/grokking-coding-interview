@@ -2,7 +2,6 @@ package kwaymerge.mergeksorted;
 
 import utils.LinkedList;
 import utils.LinkedListNode;
-import utils.LinkedListReversal;
 
 import java.util.Comparator;
 import java.util.List;
@@ -16,6 +15,7 @@ public class MergeSortList {
 
         LinkedList<Integer> result = new LinkedList<>();
         LinkedListNode<Integer>[] pointers = new LinkedListNode[k];
+        LinkedListNode<Integer> rPointer = new LinkedListNode<>(-1);
 
         for (int i = 0; i < k; i++) {
             pointers[i] = lists.get(i).head;
@@ -25,14 +25,18 @@ public class MergeSortList {
 
         while (!minHeap.isEmpty()) {
             var element = minHeap.poll();
-            result.insertNodeAtHead(new LinkedListNode<>(element[1]));
+            if (result.head == null) {
+                result.insertNodeAtHead(new LinkedListNode<>(element[1]));
+                rPointer = result.head;
+            } else {
+                rPointer.next = new LinkedListNode<>(element[1]);
+                rPointer = rPointer.next;
+            }
             if (pointers[element[0]] != null) {
                 minHeap.add(new int[]{element[0], pointers[element[0]].data});
                 pointers[element[0]] = pointers[element[0]].next;
             }
         }
-
-        LinkedListReversal<Integer> reversal = new LinkedListReversal<>();
-        return reversal.reverseLinkedList(result.head);
+        return result.head;
     }
 }
