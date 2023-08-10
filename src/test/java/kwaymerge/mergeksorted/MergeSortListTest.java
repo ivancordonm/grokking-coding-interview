@@ -33,4 +33,23 @@ class MergeSortListTest {
         assertIterableEquals(expected.head, result);
     }
 
+    @CsvSource(value = {
+        "21,23,42:1,2,4;1,2,4,21,23,42",
+        "11,41,51:21,23,42;11,21,23,41,42,51",
+        "2:1,2,4:25,56,66,72;1,2,2,4,25,56,66,72",
+        "2:2:1,2,4;1,2,2,2,4"
+    }, delimiter = ';')
+    @ParameterizedTest(name = "mergeKSortedLists({1}) = {2}")
+    void shouldMergeKSortedLists2(@ConvertWith(ListOfLinkedListConverter.class) List<LinkedList<Integer>> lists,
+                                  @ConvertWith(LinkedListConverter.class) LinkedList<Integer> expected) {
+        // given
+        MergeSortList2 mergeSortList = new MergeSortList2();
+
+        // when
+        LinkedListNode<Integer> result = mergeSortList.mergeKLists(lists);
+
+        // then
+        assertIterableEquals(expected.head, result);
+    }
+
 }
