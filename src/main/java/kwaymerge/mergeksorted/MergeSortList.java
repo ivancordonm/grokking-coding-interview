@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class MergeSortList {
+
+    @SuppressWarnings("unchecked")
     public LinkedListNode<Integer> mergeKLists(List<LinkedList<Integer>> lists) {
 
         var k = lists.size();
