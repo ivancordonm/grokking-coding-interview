@@ -20,7 +20,7 @@ class KthLargest {
     // adds element in the topKHeap
     public int add(int val) {
         topKHeap.offer(val);
-        while (topKHeap.size() > k)
+        if (topKHeap.size() > k)
             topKHeap.poll();
         return returnKthLargest();
     }
