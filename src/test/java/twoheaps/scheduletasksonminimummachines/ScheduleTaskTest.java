@@ -19,8 +19,9 @@ class ScheduleTaskTest {
     }, delimiter = ';')
 
     @ParameterizedTest(name = "shouldReturnMinimumNumberOfMachines() = {1}")
-    void shouldReturnMinimumNumberOfMachines(@ConvertWith(IntervalsToListConverter.class) List<List<Integer>> intervals,
-                                             int expected) {
+    void shouldReturnMinimumNumberOfMachines(
+        @ConvertWith(IntervalsToListConverter.class) List<List<Integer>> intervals,
+        int expected) {
         // given
         ScheduleTask scheduleTask = new ScheduleTask();
 
