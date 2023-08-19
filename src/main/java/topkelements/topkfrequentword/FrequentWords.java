@@ -20,7 +20,10 @@ public class FrequentWords {
             }
         }
 
-        var result = new ArrayList<>(minHeap);
+        ArrayList<String> result = new ArrayList<>();
+        while (!minHeap.isEmpty()) {
+            result.add(minHeap.poll());
+        }
         Collections.reverse(result);
         return result;
     }
