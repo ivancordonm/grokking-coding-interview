@@ -1,4 +1,4 @@
-package modifiedbinarysearch.binaarysearch;
+package modifiedbinarysearch.binarysearch;
 
 public class BinarySearch {
     public int binarySearch(int[] nums, int target) {

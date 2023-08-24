@@ -1,4 +1,4 @@
-package modifiedbinarysearch.binaarysearch;
+package modifiedbinarysearch.binarysearch;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
