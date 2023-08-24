@@ -9,6 +9,7 @@ public class BinarySearch {
             if (nums[middle] == target) {
                 return middle;
             } else if (nums[middle] > target) {
+
                 end = middle - 1;
             } else if (nums[middle] < target) {
                 start = middle + 1;
@@ -17,13 +18,3 @@ public class BinarySearch {
         return -1;
     }
 }
-
-// 1,2,3,4
-// start = 0
-// end = 3
-// middle = (3 - 0) / 2 = 1 => 2
-
-// 1,2,3,4,5
-// start = 0
-// end = 3
-// middle = (4 - 0) / 2 = 2 => 3
