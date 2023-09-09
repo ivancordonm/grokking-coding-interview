@@ -17,7 +17,9 @@ class KClosestTest {
         "1,2,3,4,5;4;-1;1,2,3,4",
         "1,2,3,4,5,6,7;5;7;3,4,5,6,7",
         "-29,-11,-3,0,5,10,50,63,198;6;8;-29,-11,-3,0,5,10",
-        "-10,-6,-4,-3;2;5;-4,-3"
+        "-10,-6,-4,-3;2;5;-4,-3",
+        "1,2,3,7,8;3;3;1,2,3",
+        "-3,-2,-1,0,1,2,3;3;1;0,1,2"
     }, delimiter = ';')
     @ParameterizedTest(name = "run #{index} with [{arguments}]")
     void findClosestElements(@ConvertWith(IntArrayConverter.class) int[] input, int k, int x,
