@@ -17,13 +17,20 @@ public class Combination {
         8, "tuv",
         9, "wxyz");
 
-    private List<String> recursiveCombination(List<String> result, String digits) {
-        if (digits.isEmpty()) {
+    private List<String> recursiveCombination(int index, StringBuilder current, String digits, List<String> result) {
+        if (index == digits.length()) {
+            result.add(current.toString());
             return result;
         }
 
-        int digit = Integer.parseInt(digits.substring(0, 1));
-        result = recursiveCombination(result, digits.substring(1));
+        var letters = phone.get(digits.charAt(index) - '0');
+        for (int i = 0; i < letters.length(); i++) {
+            current.append(letters.charAt(i));
+            recursiveCombination(index + 1, current, digits, result);
+            current.deleteCharAt(current.length() - 1);
+        }
+
+        return result;
     }
 
     public List<String> letterCombinations(String digits) {
@@ -32,6 +39,6 @@ public class Combination {
             return result;
         }
 
-
+        return recursiveCombination(0, new StringBuilder(), digits, result);
     }
 }
