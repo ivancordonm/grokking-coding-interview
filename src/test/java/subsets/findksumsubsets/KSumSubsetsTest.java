@@ -13,11 +13,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class KSumSubsetsTest {
 
     @CsvSource(value = {
-        "8,13,3,22,17,39,87,45,36;3;3",
-        "8,13,3,22,17,39,87,45,36;47;8,3,36,8,22,17,8,39"
+            "8,13,3,22,17,39,87,45,36;3;3",
+            "8,13,3,22,17,39,87,45,36;47;8,22,17:8,39:8,3,36",
+            "1,3,5,21,19,7,2;10;3,7:3,5,2:1,7,2",
     }, delimiter = ';')
     @ParameterizedTest(name = "getKSumSubsets({0}, {1}) = {2}")
-    void getKSumSubsets(@ConvertWith(ListIntConverter.class) List<Integer> input, int targetSum, @ConvertWith(ListOfListOfIntConverter.class)List<List<Integer>expected) {
+    void getKSumSubsets(@ConvertWith(ListIntConverter.class) List<Integer> input,
+                        int targetSum,
+                        @ConvertWith(ListOfListOfIntConverter.class) List<List<Integer>> expected) {
         // given
         var ksumSubsets = new KsumSubsets();
 
